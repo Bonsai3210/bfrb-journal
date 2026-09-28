@@ -252,6 +252,17 @@
 
   </main>
 
+
+  <!-- Beim normalen Öffnen der Website oben starten -->
+
+  <script>
+    if (!window.location.hash) {
+      window.history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+
 </body>
 
 </html>

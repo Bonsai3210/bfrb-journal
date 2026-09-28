@@ -72,7 +72,8 @@ main {
   margin: 0 0 35px;
 }
 
-.button {
+.button,
+.download-button {
   display: inline-block;
   background: #111;
   color: white;

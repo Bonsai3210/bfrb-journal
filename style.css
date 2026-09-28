@@ -48,9 +48,15 @@ main {
 }
 
 .scribble {
-  font-size: 34px;
-  letter-spacing: -8px;
   margin-bottom: 25px;
+  line-height: 0;
+}
+
+.scribble img {
+  display: block;
+  width: 230px;
+  max-width: 60vw;
+  height: auto;
 }
 
 .journal-title {

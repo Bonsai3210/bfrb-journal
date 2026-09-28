@@ -252,10 +252,70 @@ main {
   opacity: 0.45;
 }
 
+
+/* LINK ZUR DRUCKANLEITUNG */
+
 .print-link {
-  margin-top: 8px !important;
-  font-size: 14px !important;
+  display: block;
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #111;
+  font-family: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.print-link:hover {
   text-decoration: underline;
+}
+
+
+/* DRUCKANLEITUNG */
+
+.print-guide {
+  max-width: 760px;
+  margin: 50px auto 0;
+  border: 2px solid #111;
+  padding: 0;
+  scroll-margin-top: 30px;
+  background: #fff;
+}
+
+.print-guide summary {
+  padding: 18px 22px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.print-guide[open] summary {
+  border-bottom: 1px solid #111;
+}
+
+.print-guide-content {
+  padding: 24px 28px 28px;
+}
+
+.print-guide-content > p:first-child {
+  margin-top: 0;
+}
+
+.print-guide-content ol {
+  margin: 22px 0 25px;
+  padding-left: 25px;
+}
+
+.print-guide-content li {
+  margin-bottom: 7px;
+}
+
+.print-tip {
+  margin: 0;
+  font-size: 15px;
 }
 
 
@@ -296,6 +356,23 @@ main {
 
   .download-grid {
     grid-template-columns: 1fr;
+  }
+
+  .download-card {
+    padding: 22px 20px;
+  }
+
+  .print-guide {
+    margin-top: 35px;
+  }
+
+  .print-guide summary {
+    padding: 16px 18px;
+    font-size: 18px;
+  }
+
+  .print-guide-content {
+    padding: 20px 18px 22px;
   }
 
 }

@@ -193,9 +193,9 @@
               A5-Heft herunterladen
             </a>
 
-            <p class="print-link">
-              Druckanleitung folgt ↓
-            </p>
+            <a class="print-link" href="#druckanleitung">
+              Druckanleitung anzeigen ↓
+            </a>
 
           </div>
 
@@ -246,9 +246,9 @@
               A5-Heft herunterladen
             </a>
 
-            <p class="print-link">
-              Druckanleitung folgt ↓
-            </p>
+            <a class="print-link" href="#druckanleitung">
+              Druckanleitung anzeigen ↓
+            </a>
 
           </div>
 
@@ -256,14 +256,67 @@
 
       </div>
 
+
+      <!-- DRUCKANLEITUNG -->
+
+      <details class="print-guide" id="druckanleitung">
+
+        <summary>A5-Heft drucken</summary>
+
+        <div class="print-guide-content">
+
+          <p>
+            Die Datei ist bereits als Heft angeordnet.
+            Du musst die Seiten nicht selbst sortieren.
+          </p>
+
+          <ol>
+            <li>PDF herunterladen und öffnen.</li>
+            <li>Auf <strong>A4-Papier</strong> drucken.</li>
+            <li><strong>Doppelseitigen Druck</strong> auswählen.</li>
+            <li><strong>An kurzer Kante wenden</strong> auswählen.</li>
+            <li>
+              Größe auf <strong>100 % / Tatsächliche Größe</strong> stellen
+              – nicht „An Seite anpassen“.
+            </li>
+            <li>
+              Nach dem Drucken die Blätter in der vorhandenen
+              Reihenfolge aufeinanderlegen.
+            </li>
+            <li>
+              Den gesamten Stapel mittig falten – fertig ist dein A5-Heft.
+            </li>
+          </ol>
+
+          <p class="print-tip">
+            <strong>Tipp:</strong>
+            Wenn du unsicher bist, ob dein Drucker Vorder- und Rückseite
+            richtig herum druckt, teste die Einstellungen zuerst mit
+            wenigen Seiten bzw. einem Testbogen.
+          </p>
+
+        </div>
+
+      </details>
+
     </section>
 
   </main>
 
 
-  <!-- Beim normalen Öffnen der Website oben starten -->
+  <!-- Druckanleitung beim Anklicken automatisch öffnen -->
 
   <script>
+    function openPrintGuide() {
+      if (window.location.hash === "#druckanleitung") {
+        const guide = document.getElementById("druckanleitung");
+        guide.open = true;
+      }
+    }
+
+    window.addEventListener("hashchange", openPrintGuide);
+    window.addEventListener("DOMContentLoaded", openPrintGuide);
+
     if (!window.location.hash) {
       window.history.scrollRestoration = "manual";
       window.scrollTo(0, 0);

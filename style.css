@@ -1,3 +1,16 @@
+/* MUSEOMODERNO */
+
+@font-face {
+  font-family: "MuseoModerno";
+  src: url("MuseoModerno-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* GRUNDEINSTELLUNGEN */
+
 * {
   box-sizing: border-box;
 }
@@ -45,6 +58,7 @@ main {
   padding: 10px 30px 14px;
   margin-bottom: 35px;
   line-height: 0.85;
+  font-family: "MuseoModerno", Arial, sans-serif;
 }
 
 .bfrb {
@@ -57,10 +71,13 @@ main {
 .journal {
   display: block;
   font-size: clamp(30px, 5vw, 52px);
+  font-weight: 400;
 }
 
 .hero h1 {
+  font-family: "MuseoModerno", Arial, sans-serif;
   font-size: clamp(23px, 4vw, 34px);
+  font-weight: 600;
   line-height: 1.2;
   max-width: 700px;
   margin: 0 0 25px;
@@ -111,7 +128,9 @@ main {
 
 .bfrb-info h2 {
   margin-top: 0;
-  font-size: 25px;
+  font-family: "MuseoModerno", Arial, sans-serif;
+  font-size: 27px;
+  font-weight: 600;
 }
 
 .bfrb-info p {
@@ -130,15 +149,18 @@ main {
 .section-title {
   border: 2px solid #111;
   padding: 7px 15px;
-  font-weight: bold;
+  font-family: "MuseoModerno", Arial, sans-serif;
+  font-weight: 600;
   text-align: center;
   font-size: 21px;
   margin-bottom: 45px;
 }
 
 .content h2 {
+  font-family: "MuseoModerno", Arial, sans-serif;
   font-size: clamp(28px, 5vw, 42px);
-  line-height: 1.1;
+  font-weight: 600;
+  line-height: 1.15;
   margin-bottom: 30px;
 }
 
@@ -157,7 +179,9 @@ main {
 }
 
 .note h3 {
+  font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 25px;
+  font-weight: 600;
   margin: 0 0 15px;
 }
 
@@ -203,7 +227,9 @@ main {
 
 .download-card > h2 {
   margin: 0 0 12px;
+  font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 27px;
+  font-weight: 600;
 }
 
 .download-card > p {
@@ -218,7 +244,9 @@ main {
 
 .download-option h3 {
   margin: 0 0 5px;
+  font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .download-option p {
@@ -253,69 +281,61 @@ main {
 }
 
 
-/* LINK ZUR DRUCKANLEITUNG */
+/* DRUCKANLEITUNG-LINK */
 
 .print-link {
-  display: block;
-  margin-top: 12px;
-  padding: 0;
-  border: 0;
-  background: none;
+  display: inline-block;
+  margin-top: 12px !important;
+  margin-left: 2px;
+  font-size: 14px !important;
   color: #111;
-  font-family: inherit;
-  font-size: 14px;
   text-decoration: none;
-  cursor: pointer;
-  text-align: left;
+  border-bottom: 1px solid #111;
+}
+
+.print-link:link,
+.print-link:visited {
+  color: #111;
 }
 
 .print-link:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid #111;
 }
 
 
 /* DRUCKANLEITUNG */
 
-.print-guide {
-  max-width: 760px;
-  margin: 50px auto 0;
-  border: 2px solid #111;
-  padding: 0;
-  scroll-margin-top: 30px;
-  background: #fff;
+.print-instructions {
+  margin-top: 55px;
+  padding-top: 35px;
+  border-top: 2px solid #111;
+  scroll-margin-top: 35px;
 }
 
-.print-guide summary {
-  padding: 18px 22px;
-  font-size: 20px;
-  font-weight: bold;
+.print-instructions summary {
   cursor: pointer;
+  font-family: "MuseoModerno", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  list-style-position: outside;
 }
 
-.print-guide[open] summary {
-  border-bottom: 1px solid #111;
+.print-instructions > p {
+  margin-top: 25px;
+  font-size: 16px;
 }
 
-.print-guide-content {
-  padding: 24px 28px 28px;
+.print-instructions ol {
+  margin-top: 20px;
+  padding-left: 40px;
 }
 
-.print-guide-content > p:first-child {
-  margin-top: 0;
+.print-instructions li {
+  margin-bottom: 5px;
 }
 
-.print-guide-content ol {
-  margin: 22px 0 25px;
-  padding-left: 25px;
-}
-
-.print-guide-content li {
-  margin-bottom: 7px;
-}
-
-.print-tip {
-  margin: 0;
-  font-size: 15px;
+.print-instructions .tip {
+  margin-top: 20px;
 }
 
 
@@ -358,21 +378,8 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .download-card {
-    padding: 22px 20px;
-  }
-
-  .print-guide {
-    margin-top: 35px;
-  }
-
-  .print-guide summary {
-    padding: 16px 18px;
-    font-size: 18px;
-  }
-
-  .print-guide-content {
-    padding: 20px 18px 22px;
+  .print-instructions {
+    margin-top: 45px;
   }
 
 }

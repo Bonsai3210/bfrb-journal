@@ -193,9 +193,11 @@
               A5-Heft herunterladen
             </a>
 
-            <a class="print-link" href="#druckanleitung">
-              Druckanleitung anzeigen ↓
-            </a>
+            <button class="print-link"
+                    type="button"
+                    onclick="openPrintGuide()">
+              Druckanleitung ↓
+            </button>
 
           </div>
 
@@ -246,9 +248,11 @@
               A5-Heft herunterladen
             </a>
 
-            <a class="print-link" href="#druckanleitung">
-              Druckanleitung anzeigen ↓
-            </a>
+            <button class="print-link"
+                    type="button"
+                    onclick="openPrintGuide()">
+              Druckanleitung ↓
+            </button>
 
           </div>
 
@@ -272,17 +276,29 @@
 
           <ol>
             <li>PDF herunterladen und öffnen.</li>
-            <li>Auf <strong>A4-Papier</strong> drucken.</li>
-            <li><strong>Doppelseitigen Druck</strong> auswählen.</li>
-            <li><strong>An kurzer Kante wenden</strong> auswählen.</li>
+
+            <li>
+              Auf <strong>A4-Papier</strong> drucken.
+            </li>
+
+            <li>
+              <strong>Doppelseitigen Druck</strong> auswählen.
+            </li>
+
+            <li>
+              <strong>An kurzer Kante wenden</strong> auswählen.
+            </li>
+
             <li>
               Größe auf <strong>100 % / Tatsächliche Größe</strong> stellen
               – nicht „An Seite anpassen“.
             </li>
+
             <li>
               Nach dem Drucken die Blätter in der vorhandenen
               Reihenfolge aufeinanderlegen.
             </li>
+
             <li>
               Den gesamten Stapel mittig falten – fertig ist dein A5-Heft.
             </li>
@@ -304,23 +320,33 @@
   </main>
 
 
-  <!-- Druckanleitung beim Anklicken automatisch öffnen -->
-
   <script>
+
+    /* Druckanleitung öffnen und hinscrollen */
+
     function openPrintGuide() {
-      if (window.location.hash === "#druckanleitung") {
-        const guide = document.getElementById("druckanleitung");
-        guide.open = true;
-      }
+
+      const guide = document.getElementById("druckanleitung");
+
+      guide.open = true;
+
+      setTimeout(() => {
+        guide.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 50);
+
     }
 
-    window.addEventListener("hashchange", openPrintGuide);
-    window.addEventListener("DOMContentLoaded", openPrintGuide);
+
+    /* Beim normalen Öffnen der Website oben starten */
 
     if (!window.location.hash) {
       window.history.scrollRestoration = "manual";
       window.scrollTo(0, 0);
     }
+
   </script>
 
 

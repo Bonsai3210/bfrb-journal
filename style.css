@@ -82,6 +82,7 @@ main {
   border: 2px solid #111;
   font-weight: bold;
   font-size: 17px;
+    text-decoration: none;
 }
 
 .button:hover {

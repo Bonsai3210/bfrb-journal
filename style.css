@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+}
+
+main {
+  width: 100%;
+}
+
+
+/* HERO */
+
+.hero {
+  min-height: 90vh;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 100px 30px 80px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scribble {
+  font-size: 34px;
+  letter-spacing: -8px;
+  margin-bottom: 25px;
+}
+
+.journal-title {
+  border: 3px solid #111;
+  padding: 10px 30px 14px;
+  margin-bottom: 35px;
+  line-height: 0.85;
+}
+
+.bfrb {
+  display: block;
+  font-size: clamp(65px, 11vw, 115px);
+  font-weight: 500;
+  letter-spacing: -5px;
+}
+
+.journal {
+  display: block;
+  font-size: clamp(30px, 5vw, 52px);
+}
+
+.hero h1 {
+  font-size: clamp(23px, 4vw, 34px);
+  line-height: 1.2;
+  max-width: 700px;
+  margin: 0 0 25px;
+}
+
+.intro {
+  max-width: 610px;
+  font-size: 19px;
+  margin: 0 0 35px;
+}
+
+.button {
+  display: inline-block;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  padding: 15px 27px;
+  border: 2px solid #111;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.button:hover {
+  background: white;
+  color: #111;
+}
+
+.small {
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+
+/* BFRB INFO */
+
+.bfrb-info {
+  max-width: 700px;
+  margin: 0 auto 120px;
+  padding: 30px;
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+}
+
+.bfrb-info h2 {
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.bfrb-info p {
+  margin-bottom: 0;
+}
+
+
+/* INHALT */
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 30px 120px;
+}
+
+.section-title {
+  border: 2px solid #111;
+  padding: 7px 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 21px;
+  margin-bottom: 45px;
+}
+
+.content h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.content p {
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+
+/* HINWEISKASTEN */
+
+.note {
+  border: 2px solid #111;
+  padding: 25px 28px;
+  margin: 50px 0 40px;
+}
+
+.note h3 {
+  font-size: 25px;
+  margin: 0 0 15px;
+}
+
+.note p {
+  margin-bottom: 12px;
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+.freedom {
+  font-size: 16px !important;
+}
+
+
+/* HANDY */
+
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 70px 20px 60px;
+  }
+
+  .journal-title {
+    padding: 10px 20px 13px;
+  }
+
+  .bfrb {
+    letter-spacing: -3px;
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+
+  .content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .bfrb-info {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+}

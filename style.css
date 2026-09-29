@@ -124,8 +124,6 @@ main {
 
 /* BFRB INFO */
 
-/* BFRB INFO */
-
 .bfrb-info {
   max-width: 700px;
   margin: 0 auto 120px;
@@ -221,6 +219,103 @@ main {
 }
 
 
+/* JOURNAL-GALERIE */
+
+.journal-preview {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 30px 120px;
+}
+
+.preview-intro {
+  text-align: center;
+  font-size: 17px;
+  margin: -20px auto 30px;
+}
+
+.slider {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid #111;
+  background: #f5f5f5;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* PFEILE */
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  border: 2px solid #111;
+  background: #ffffff;
+  color: #111;
+
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.slider-arrow:hover {
+  background: #111;
+  color: #fff;
+}
+
+.slider-prev {
+  left: 15px;
+}
+
+.slider-next {
+  right: 15px;
+}
+
+
+/* PUNKTE UNTER DER GALERIE */
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.slider-dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+
+  border: 1.5px solid #111;
+  border-radius: 50%;
+  background: #fff;
+
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background: #111;
+}
+
+
 /* DOWNLOAD */
 
 .downloads {
@@ -258,7 +353,6 @@ main {
 .download-card > p {
   margin: 0 0 20px;
   min-height: 52px;
-}
 }
 
 .download-option {
@@ -315,12 +409,12 @@ main {
   font-size: 14px !important;
   color: #111;
   text-decoration: none;
+  border: none;
   border-bottom: 1px solid #111;
-}
-
-.print-link:link,
-.print-link:visited {
-  color: #111;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .print-link:hover {
@@ -330,14 +424,14 @@ main {
 
 /* DRUCKANLEITUNG */
 
-.print-instructions {
+.print-guide {
   margin-top: 55px;
   padding-top: 35px;
   border-top: 2px solid #111;
   scroll-margin-top: 35px;
 }
 
-.print-instructions summary {
+.print-guide summary {
   cursor: pointer;
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 22px;
@@ -345,21 +439,21 @@ main {
   list-style-position: outside;
 }
 
-.print-instructions > p {
+.print-guide-content {
   margin-top: 25px;
   font-size: 16px;
 }
 
-.print-instructions ol {
+.print-guide-content ol {
   margin-top: 20px;
   padding-left: 40px;
 }
 
-.print-instructions li {
+.print-guide-content li {
   margin-bottom: 5px;
 }
 
-.print-instructions .tip {
+.print-tip {
   margin-top: 20px;
 }
 
@@ -394,6 +488,31 @@ main {
     margin-right: 20px;
   }
 
+
+  /* GALERIE AUF DEM HANDY */
+
+  .journal-preview {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .slider-prev {
+    left: 10px;
+  }
+
+  .slider-next {
+    right: 10px;
+  }
+
+
+  /* DOWNLOAD */
+
   .downloads {
     padding-left: 20px;
     padding-right: 20px;
@@ -403,7 +522,11 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .print-instructions {
+  .download-card > p {
+    min-height: 0;
+  }
+
+  .print-guide {
     margin-top: 45px;
   }
 

@@ -124,23 +124,39 @@ main {
 
 /* BFRB INFO */
 
+/* BFRB INFO */
+
 .bfrb-info {
   max-width: 700px;
   margin: 0 auto 120px;
   padding: 30px;
   border-top: 2px solid #111;
   border-bottom: 2px solid #111;
+  text-align: center;
 }
 
-.bfrb-info h2 {
-  margin-top: 0;
-  font-family: "MuseoModerno", Arial, sans-serif;
-  font-size: 27px;
-  font-weight: 600;
+.bfrb-details {
+  width: 100%;
+  text-align: center;
 }
 
-.bfrb-info p {
-  margin-bottom: 0;
+.bfrb-details summary {
+  cursor: pointer;
+  font-family: "MuseoModerno", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bfrb-details-content {
+  max-width: 600px;
+  margin: 20px auto 0;
+  text-align: center;
+}
+
+.bfrb-details-content p {
+  margin: 0;
+  text-align: center;
 }
 
 
@@ -240,6 +256,8 @@ main {
 
 .download-card > p {
   margin: 0 0 20px;
+  min-height: 52px;
+}
 }
 
 .download-option {

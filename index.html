@@ -134,6 +134,93 @@
     </section>
 
 
+    <!-- EIN BLICK INS JOURNAL -->
+
+    <section class="journal-preview">
+
+      <div class="section-title">
+        Ein Blick ins Journal
+      </div>
+
+      <p class="preview-intro">
+        Ein paar Seiten aus der ausgedruckten A5-Version.
+      </p>
+
+      <div class="slider">
+
+        <div class="slide active">
+          <img
+            src="journal-cover.jpg"
+            alt="Ausgedrucktes BFRB-Journal im A5-Format">
+        </div>
+
+        <div class="slide">
+          <img
+            src="journal-warum.jpg"
+            alt="Aufgeschlagenes BFRB-Journal mit der Einführung">
+        </div>
+
+        <div class="slide">
+          <img
+            src="journal-checkin.jpg"
+            alt="Check-in-Seiten des BFRB-Journals">
+        </div>
+
+        <div class="slide">
+          <img
+            src="journal-reflexion.jpg"
+            alt="Reflexionsseiten des BFRB-Journals">
+        </div>
+
+
+        <button
+          class="slider-arrow slider-prev"
+          type="button"
+          aria-label="Vorheriges Bild">
+          ←
+        </button>
+
+        <button
+          class="slider-arrow slider-next"
+          type="button"
+          aria-label="Nächstes Bild">
+          →
+        </button>
+
+      </div>
+
+
+      <div class="slider-dots" aria-label="Bilder auswählen">
+
+        <button
+          class="slider-dot active"
+          type="button"
+          aria-label="Bild 1 anzeigen">
+        </button>
+
+        <button
+          class="slider-dot"
+          type="button"
+          aria-label="Bild 2 anzeigen">
+        </button>
+
+        <button
+          class="slider-dot"
+          type="button"
+          aria-label="Bild 3 anzeigen">
+        </button>
+
+        <button
+          class="slider-dot"
+          type="button"
+          aria-label="Bild 4 anzeigen">
+        </button>
+
+      </div>
+
+    </section>
+
+
     <!-- DOWNLOAD -->
 
     <section class="downloads" id="download">
@@ -338,6 +425,90 @@
       }, 50);
 
     }
+
+
+    /* Bildergalerie */
+
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".slider-dot");
+    const prevButton = document.querySelector(".slider-prev");
+    const nextButton = document.querySelector(".slider-next");
+    const slider = document.querySelector(".slider");
+
+    let currentSlide = 0;
+
+
+    function showSlide(index) {
+
+      if (index < 0) {
+        index = slides.length - 1;
+      }
+
+      if (index >= slides.length) {
+        index = 0;
+      }
+
+      slides.forEach(slide => {
+        slide.classList.remove("active");
+      });
+
+      dots.forEach(dot => {
+        dot.classList.remove("active");
+      });
+
+      slides[index].classList.add("active");
+      dots[index].classList.add("active");
+
+      currentSlide = index;
+    }
+
+
+    prevButton.addEventListener("click", () => {
+      showSlide(currentSlide - 1);
+    });
+
+
+    nextButton.addEventListener("click", () => {
+      showSlide(currentSlide + 1);
+    });
+
+
+    dots.forEach((dot, index) => {
+
+      dot.addEventListener("click", () => {
+        showSlide(index);
+      });
+
+    });
+
+
+    /* Wischen auf Handy und Tablet */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener("touchstart", event => {
+      touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+
+    slider.addEventListener("touchend", event => {
+
+      touchEndX = event.changedTouches[0].screenX;
+
+      const swipeDistance = touchStartX - touchEndX;
+
+      if (Math.abs(swipeDistance) < 50) {
+        return;
+      }
+
+      if (swipeDistance > 0) {
+        showSlide(currentSlide + 1);
+      } else {
+        showSlide(currentSlide - 1);
+      }
+
+    }, { passive: true });
 
 
     /* Beim normalen Öffnen der Website oben starten */

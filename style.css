@@ -310,9 +310,9 @@ main {
   width: 46px;
   height: 46px;
 
-  border: 2px solid #111;
-  background: #ffffff;
-  color: #111;
+  border: 2px solid #8c52ff;
+  background: #8c52ff;
+  color: #fff;
 
   font-size: 25px;
   line-height: 1;
@@ -320,8 +320,8 @@ main {
 }
 
 .slider-arrow:hover {
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #8c52ff;
 }
 
 .slider-prev {
@@ -335,19 +335,12 @@ main {
 
 /* SLIDER-PUNKTE */
 
-.slider-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 18px;
-}
-
 .slider-dot {
   width: 11px;
   height: 11px;
   padding: 0;
 
-  border: 1.5px solid #111;
+  border: 1.5px solid #8c52ff;
   border-radius: 50%;
   background: #fff;
 
@@ -355,7 +348,7 @@ main {
 }
 
 .slider-dot.active {
-  background: #111;
+  background: #8c52ff;
 }
 
 
@@ -568,6 +561,33 @@ body.lightbox-open {
   margin-top: 20px;
 }
 
+/* LILA DROPDOWN-DREIECKE */
+
+.bfrb-details summary,
+.print-guide summary {
+  list-style: none;
+}
+
+.bfrb-details summary::-webkit-details-marker,
+.print-guide summary::-webkit-details-marker {
+  display: none;
+}
+
+.bfrb-details summary::before,
+.print-guide summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 8px;
+  color: #8c52ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  transition: transform 0.15s ease;
+}
+
+.bfrb-details[open] summary::before,
+.print-guide[open] summary::before {
+  transform: rotate(90deg);
+}
 
 /* HANDY */
 

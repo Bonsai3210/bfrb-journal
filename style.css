@@ -366,28 +366,20 @@ main {
   padding-left: 32px;
 }
 
-.questions-intro {
-  margin: 0 0 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  font-weight: bold;
-  line-height: 1.4;
-}
-
 .question-list {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .question-list p {
   margin: 0;
-  padding: 13px 0;
+  padding: 14px 0;
 
   border-bottom: 1px solid #ccc;
 
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .question-list p:first-child {
@@ -395,8 +387,10 @@ main {
 }
 
 .question-list span {
+  color: #8c52ff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
+  font-weight: 600;
 }
 
 

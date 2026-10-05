@@ -726,3 +726,86 @@ body.lightbox-open {
   }
 
 }
+
+/* =========================================
+   KORREKTUREN INTERAKTIVE ELEMENTE
+   ========================================= */
+
+
+/* 1. FRAGEN: Pfeile wieder schwarz */
+
+.question-list span,
+.question-list p,
+.question-list p::before {
+  color: #111 !important;
+}
+
+
+/* 2. SLIDESHOW: Buttons lila, Pfeile weiß */
+
+.slider .slider-arrow,
+.slider button.slider-arrow,
+.slider .slider-prev,
+.slider .slider-next {
+  background: #8c52ff !important;
+  border-color: #8c52ff !important;
+  color: #ffffff !important;
+}
+
+.slider .slider-arrow:hover,
+.slider button.slider-arrow:hover,
+.slider .slider-prev:hover,
+.slider .slider-next:hover {
+  background: #ffffff !important;
+  border-color: #8c52ff !important;
+  color: #8c52ff !important;
+}
+
+
+/* 3. NATIVE DROPDOWN-DREIECKE ENTFERNEN */
+
+.bfrb-details > summary,
+.print-guide > summary {
+  list-style: none !important;
+}
+
+.bfrb-details > summary::-webkit-details-marker,
+.print-guide > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.bfrb-details > summary::marker,
+.print-guide > summary::marker {
+  content: "" !important;
+  display: none !important;
+}
+
+
+/* 4. EIGENE LILA DREIECKE */
+
+.bfrb-details > summary::before,
+.print-guide > summary::before {
+  content: "▶" !important;
+
+  display: inline-block !important;
+  margin-right: 9px;
+
+  color: #8c52ff !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  line-height: 1;
+
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.15s ease;
+}
+
+
+/* Beim Aufklappen dreht sich das Dreieck nach unten */
+
+.bfrb-details[open] > summary::before,
+.print-guide[open] > summary::before {
+  transform: rotate(90deg);
+}

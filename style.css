@@ -159,7 +159,6 @@ main {
   font-size: 21px;
   font-weight: 600;
   text-align: center;
-  list-style-position: inside;
 }
 
 .bfrb-details-content {
@@ -312,16 +311,22 @@ main {
 
   border: 2px solid #8c52ff;
   background: #8c52ff;
-  color: #fff;
+  color: #ffffff !important;
 
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   line-height: 1;
+
   cursor: pointer;
 }
 
 .slider-arrow:hover {
-  background: #fff;
-  color: #8c52ff;
+  background: #ffffff;
+  color: #8c52ff !important;
+}
+
+.slider-arrow span {
+  color: inherit !important;
 }
 
 .slider-prev {
@@ -335,6 +340,13 @@ main {
 
 /* SLIDER-PUNKTE */
 
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 .slider-dot {
   width: 11px;
   height: 11px;
@@ -342,7 +354,7 @@ main {
 
   border: 1.5px solid #8c52ff;
   border-radius: 50%;
-  background: #fff;
+  background: #ffffff;
 
   cursor: pointer;
 }
@@ -367,7 +379,7 @@ main {
   margin: 0;
   padding: 14px 0;
 
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #cccccc;
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
@@ -376,14 +388,14 @@ main {
 }
 
 .question-list p:first-child {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
 }
 
 .question-list span {
-  color: #8c52ff;
+  color: #111111;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 
@@ -424,14 +436,19 @@ main {
   width: 48px;
   height: 48px;
 
-  border: 2px solid #fff;
-  background: #111;
-  color: #fff;
+  border: 2px solid #8c52ff;
+  background: #8c52ff;
+  color: #ffffff;
 
   font-size: 32px;
   line-height: 1;
 
   cursor: pointer;
+}
+
+.lightbox-close:hover {
+  background: #ffffff;
+  color: #8c52ff;
 }
 
 body.lightbox-open {
@@ -510,11 +527,11 @@ body.lightbox-open {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px !important;
 
-  color: #111;
+  color: #8c52ff;
   text-decoration: none;
 
   border: none;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #8c52ff;
   background: transparent;
 
   padding: 0;
@@ -522,7 +539,7 @@ body.lightbox-open {
 }
 
 .print-link:hover {
-  border-bottom: 2px solid #111;
+  border-bottom: 2px solid #8c52ff;
 }
 
 
@@ -540,7 +557,6 @@ body.lightbox-open {
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 21px;
   font-weight: 600;
-  list-style-position: outside;
 }
 
 .print-guide-content {
@@ -561,33 +577,47 @@ body.lightbox-open {
   margin-top: 20px;
 }
 
+
 /* LILA DROPDOWN-DREIECKE */
 
 .bfrb-details summary,
 .print-guide summary {
-  list-style: none;
+  list-style: none !important;
 }
 
 .bfrb-details summary::-webkit-details-marker,
 .print-guide summary::-webkit-details-marker {
-  display: none;
+  display: none !important;
+}
+
+.bfrb-details summary::marker,
+.print-guide summary::marker {
+  content: "";
 }
 
 .bfrb-details summary::before,
 .print-guide summary::before {
   content: "▶";
   display: inline-block;
+
   margin-right: 8px;
-  color: #8c52ff;
+
+  color: #8c52ff !important;
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  line-height: 1;
+
+  transform: rotate(0deg);
+  transform-origin: center;
   transition: transform 0.15s ease;
 }
 
-.bfrb-details[open] summary::before,
-.print-guide[open] summary::before {
+.bfrb-details[open] > summary::before,
+.print-guide[open] > summary::before {
   transform: rotate(90deg);
 }
+
 
 /* HANDY */
 
@@ -651,11 +681,6 @@ body.lightbox-open {
     border-left: none;
     padding-left: 0;
     margin-top: 35px;
-  }
-
-  .questions-intro {
-    text-align: center;
-    margin-bottom: 18px;
   }
 
   .question-list p {

@@ -144,6 +144,7 @@
 
       <p class="preview-intro">
         Ein paar Seiten aus der ausgedruckten A5-Version.
+        Klick auf ein Bild, um es größer anzusehen.
       </p>
 
       <div class="slider">
@@ -151,25 +152,29 @@
         <div class="slide active">
           <img
             src="journal-cover.jpg"
-            alt="Ausgedrucktes BFRB-Journal im A5-Format">
+            alt="Ausgedrucktes BFRB-Journal im A5-Format"
+            onclick="openLightbox(this)">
         </div>
 
         <div class="slide">
           <img
             src="journal-warum.jpg"
-            alt="Aufgeschlagenes BFRB-Journal mit der Einführung">
+            alt="Aufgeschlagenes BFRB-Journal mit der Einführung"
+            onclick="openLightbox(this)">
         </div>
 
         <div class="slide">
           <img
             src="journal-checkin.jpg"
-            alt="Check-in-Seiten des BFRB-Journals">
+            alt="Check-in-Seiten des BFRB-Journals"
+            onclick="openLightbox(this)">
         </div>
 
         <div class="slide">
           <img
             src="journal-reflexion.jpg"
-            alt="Reflexionsseiten des BFRB-Journals">
+            alt="Reflexionsseiten des BFRB-Journals"
+            onclick="openLightbox(this)">
         </div>
 
 
@@ -215,6 +220,24 @@
           type="button"
           aria-label="Bild 4 anzeigen">
         </button>
+
+      </div>
+
+
+      <!-- BEISPIELFRAGEN -->
+
+      <div class="journal-questions">
+
+        <p class="questions-intro">
+          Das Journal fragt dich zum Beispiel:
+        </p>
+
+        <div class="question-list">
+          <p>Was funktioniert gerade gut?</p>
+          <p>Was sind gerade Risikosituationen oder -bereiche?</p>
+          <p>Welche Strategie hilft mir gerade gut?</p>
+          <p>Welche möchte ich mal wieder ausprobieren?</p>
+        </div>
 
       </div>
 
@@ -363,18 +386,9 @@
 
           <ol>
             <li>PDF herunterladen und öffnen.</li>
-
-            <li>
-              Auf <strong>A4-Papier</strong> drucken.
-            </li>
-
-            <li>
-              <strong>Doppelseitigen Druck</strong> auswählen.
-            </li>
-
-            <li>
-              <strong>An kurzer Kante wenden</strong> auswählen.
-            </li>
+            <li>Auf <strong>A4-Papier</strong> drucken.</li>
+            <li><strong>Doppelseitigen Druck</strong> auswählen.</li>
+            <li><strong>An kurzer Kante wenden</strong> auswählen.</li>
 
             <li>
               Größe auf <strong>100 % / Tatsächliche Größe</strong> stellen
@@ -405,6 +419,32 @@
     </section>
 
   </main>
+
+
+  <!-- GROSSANSICHT DER BILDER -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Bild vergrößert anzeigen"
+    onclick="closeLightbox(event)">
+
+    <button
+      class="lightbox-close"
+      type="button"
+      aria-label="Großansicht schließen"
+      onclick="closeLightboxButton()">
+      ×
+    </button>
+
+    <img
+      id="lightbox-image"
+      src=""
+      alt="">
+
+  </div>
 
 
   <script>
@@ -509,6 +549,53 @@
       }
 
     }, { passive: true });
+
+
+    /* Großansicht */
+
+    function openLightbox(image) {
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+
+      lightbox.classList.add("open");
+
+      document.body.classList.add("lightbox-open");
+    }
+
+
+    function closeLightbox(event) {
+
+      if (
+        event.target.id === "lightbox" ||
+        event.target.classList.contains("lightbox-close")
+      ) {
+        closeLightboxButton();
+      }
+
+    }
+
+
+    function closeLightboxButton() {
+
+      document.getElementById("lightbox").classList.remove("open");
+      document.body.classList.remove("lightbox-open");
+
+    }
+
+
+    /* Escape-Taste schließt Großansicht */
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+        closeLightboxButton();
+      }
+
+    });
 
 
     /* Beim normalen Öffnen der Website oben starten */

@@ -41,7 +41,6 @@ main {
   margin: 0 auto;
   padding: 100px 30px 80px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -190,13 +189,11 @@ main {
   color: #ffffff;
   border: 2px solid #111;
   padding: 10px 15px;
-
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 21px;
   font-weight: 600;
   line-height: 1.3;
   text-align: center;
-
   margin-bottom: 45px;
 }
 
@@ -267,9 +264,6 @@ main {
   margin: -20px auto 35px;
 }
 
-
-/* GALERIE + FRAGEN NEBENEINANDER */
-
 .preview-layout {
   display: grid;
   grid-template-columns: 1.35fr 0.85fr;
@@ -314,28 +308,20 @@ main {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
   width: 46px;
   height: 46px;
-
   border: 2px solid #8c52ff;
   background: #8c52ff;
   color: #ffffff !important;
-
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   line-height: 1;
-
   cursor: pointer;
 }
 
 .slider-arrow:hover {
   background: #ffffff;
   color: #8c52ff !important;
-}
-
-.slider-arrow span {
-  color: inherit !important;
 }
 
 .slider-prev {
@@ -360,11 +346,9 @@ main {
   width: 11px;
   height: 11px;
   padding: 0;
-
   border: 1.5px solid #8c52ff;
   border-radius: 50%;
   background: #ffffff;
-
   cursor: pointer;
 }
 
@@ -380,14 +364,9 @@ main {
   padding-left: 32px;
 }
 
-.question-list {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .question-list p {
   margin: 0;
   padding: 14px 0;
-
   border-bottom: 1px solid #cccccc;
 
   display: grid;
@@ -395,7 +374,6 @@ main {
   column-gap: 8px;
   align-items: start;
 
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 1.45;
@@ -407,9 +385,6 @@ main {
 
 .question-list span {
   color: #111111;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  font-weight: 400;
   line-height: 1.45;
 }
 
@@ -420,13 +395,10 @@ main {
   position: fixed;
   inset: 0;
   z-index: 1000;
-
   display: none;
   align-items: center;
   justify-content: center;
-
   padding: 30px;
-
   background: rgba(0, 0, 0, 0.88);
 }
 
@@ -447,17 +419,13 @@ main {
   position: fixed;
   top: 20px;
   right: 25px;
-
   width: 48px;
   height: 48px;
-
   border: 2px solid #8c52ff;
   background: #8c52ff;
   color: #ffffff;
-
   font-size: 32px;
   line-height: 1;
-
   cursor: pointer;
 }
 
@@ -538,17 +506,13 @@ body.lightbox-open {
   display: inline-block;
   margin-top: 12px !important;
   margin-left: 2px;
-
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px !important;
-
   color: #8c52ff;
   text-decoration: none;
-
   border: none;
   border-bottom: 1px solid #8c52ff;
   background: transparent;
-
   padding: 0;
   cursor: pointer;
 }
@@ -612,21 +576,16 @@ body.lightbox-open {
   width: 300px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
-
   border: 2px solid #111;
   border-radius: 50%;
   background: #f5f5f5;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin: 0 auto;
-
+  margin: 0 auto 35px;
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 17px;
   color: #777777;
-
   overflow: hidden;
 }
 
@@ -681,45 +640,40 @@ body.lightbox-open {
   display: inline-block;
   margin-top: 4px;
   padding: 13px 20px;
-
   background: #8c52ff;
   border: 2px solid #8c52ff;
   color: #ffffff;
-
   font-weight: 700;
 }
 
 
-/* LILA DROPDOWN-DREIECKE */
+/* DROPDOWN-DREIECKE */
 
-.bfrb-details summary,
-.print-guide summary {
+.bfrb-details > summary,
+.print-guide > summary {
   list-style: none !important;
 }
 
-.bfrb-details summary::-webkit-details-marker,
-.print-guide summary::-webkit-details-marker {
+.bfrb-details > summary::-webkit-details-marker,
+.print-guide > summary::-webkit-details-marker {
   display: none !important;
 }
 
-.bfrb-details summary::marker,
-.print-guide summary::marker {
-  content: "";
+.bfrb-details > summary::marker,
+.print-guide > summary::marker {
+  content: "" !important;
 }
 
-.bfrb-details summary::before,
-.print-guide summary::before {
-  content: "▶";
-  display: inline-block;
-
-  margin-right: 8px;
-
+.bfrb-details > summary::before,
+.print-guide > summary::before {
+  content: "▶" !important;
+  display: inline-block !important;
+  margin-right: 9px;
   color: #8c52ff !important;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
   line-height: 1;
-
   transform: rotate(0deg);
   transform-origin: center;
   transition: transform 0.15s ease;
@@ -770,7 +724,7 @@ body.lightbox-open {
   }
 
 
-  /* GALERIE AUF DEM HANDY */
+  /* GALERIE */
 
   .journal-preview {
     padding-left: 20px;
@@ -801,7 +755,7 @@ body.lightbox-open {
   }
 
 
-  /* GROSSANSICHT AUF DEM HANDY */
+  /* GROSSANSICHT */
 
   .lightbox {
     padding: 15px;
@@ -851,6 +805,11 @@ body.lightbox-open {
     gap: 32px;
   }
 
+  .community-photo {
+    width: 260px;
+    margin-bottom: 10px;
+  }
+
   .community-feedback {
     margin-top: 35px;
   }
@@ -862,21 +821,13 @@ body.lightbox-open {
 }
 
 
-/* =========================================
-   KORREKTUREN INTERAKTIVE ELEMENTE
-   ========================================= */
-
-
-/* FRAGEN: Pfeile schwarz */
+/* INTERAKTIVE ELEMENTE */
 
 .question-list span,
 .question-list p,
 .question-list p::before {
   color: #111 !important;
 }
-
-
-/* SLIDESHOW: Buttons lila, Pfeile weiß */
 
 .slider .slider-arrow,
 .slider button.slider-arrow,
@@ -894,50 +845,4 @@ body.lightbox-open {
   background: #ffffff !important;
   border-color: #8c52ff !important;
   color: #8c52ff !important;
-}
-
-
-/* NATIVE DROPDOWN-DREIECKE ENTFERNEN */
-
-.bfrb-details > summary,
-.print-guide > summary {
-  list-style: none !important;
-}
-
-.bfrb-details > summary::-webkit-details-marker,
-.print-guide > summary::-webkit-details-marker {
-  display: none !important;
-}
-
-.bfrb-details > summary::marker,
-.print-guide > summary::marker {
-  content: "" !important;
-  display: none !important;
-}
-
-
-/* EIGENE LILA DREIECKE */
-
-.bfrb-details > summary::before,
-.print-guide > summary::before {
-  content: "▶" !important;
-
-  display: inline-block !important;
-  margin-right: 9px;
-
-  color: #8c52ff !important;
-
-  font-family: Arial, Helvetica, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: normal !important;
-  line-height: 1;
-
-  transform: rotate(0deg);
-  transform-origin: center;
-  transition: transform 0.15s ease;
-}
-
-.bfrb-details[open] > summary::before,
-.print-guide[open] > summary::before {
-  transform: rotate(90deg);
 }

@@ -597,18 +597,18 @@
 
     /* BILD-GROSSANSICHT */
 
-    function openLightbox(src, alt) {
+    function openLightbox(clickedImage) {
 
-      const lightbox = document.getElementById("lightbox");
-      const image = document.getElementById("lightbox-image");
+  const lightbox = document.getElementById("lightbox");
+  const image = document.getElementById("lightbox-image");
 
-      image.src = src;
-      image.alt = alt;
+  image.src = clickedImage.src;
+  image.alt = clickedImage.alt;
 
-      lightbox.classList.add("open");
-      document.body.classList.add("lightbox-open");
+  lightbox.classList.add("open");
+  document.body.classList.add("lightbox-open");
 
-    }
+}
 
 
     function closeLightbox(event) {

@@ -603,13 +603,14 @@ body.lightbox-open {
 
 .community-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 0.7fr) 1.3fr;
+  grid-template-columns: 300px 1fr;
   gap: 55px;
   align-items: start;
 }
 
 .community-photo {
-  width: min(100%, 300px);
+  width: 300px;
+  max-width: 100%;
   aspect-ratio: 1 / 1;
 
   border: 2px solid #111;
@@ -850,11 +851,6 @@ body.lightbox-open {
     gap: 32px;
   }
 
-  .community-photo {
-    width: 100%;
-    min-height: 280px;
-  }
-
   .community-feedback {
     margin-top: 35px;
   }
@@ -871,7 +867,7 @@ body.lightbox-open {
    ========================================= */
 
 
-/* 1. FRAGEN: Pfeile wieder schwarz */
+/* FRAGEN: Pfeile schwarz */
 
 .question-list span,
 .question-list p,
@@ -880,7 +876,7 @@ body.lightbox-open {
 }
 
 
-/* 2. SLIDESHOW: Buttons lila, Pfeile weiß */
+/* SLIDESHOW: Buttons lila, Pfeile weiß */
 
 .slider .slider-arrow,
 .slider button.slider-arrow,
@@ -901,7 +897,7 @@ body.lightbox-open {
 }
 
 
-/* 3. NATIVE DROPDOWN-DREIECKE ENTFERNEN */
+/* NATIVE DROPDOWN-DREIECKE ENTFERNEN */
 
 .bfrb-details > summary,
 .print-guide > summary {
@@ -920,7 +916,7 @@ body.lightbox-open {
 }
 
 
-/* 4. EIGENE LILA DREIECKE */
+/* EIGENE LILA DREIECKE */
 
 .bfrb-details > summary::before,
 .print-guide > summary::before {
@@ -940,9 +936,6 @@ body.lightbox-open {
   transform-origin: center;
   transition: transform 0.15s ease;
 }
-
-
-/* Beim Aufklappen dreht sich das Dreieck nach unten */
 
 .bfrb-details[open] > summary::before,
 .print-guide[open] > summary::before {

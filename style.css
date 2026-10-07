@@ -1,4 +1,6 @@
-/* MUSEOMODERNO */
+/* =========================================================
+   SCHRIFT
+   ========================================================= */
 
 @font-face {
   font-family: "MuseoModerno";
@@ -9,7 +11,9 @@
 }
 
 
-/* GRUNDEINSTELLUNGEN */
+/* =========================================================
+   GRUNDEINSTELLUNGEN
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -33,18 +37,22 @@ main {
 }
 
 
-/* HERO */
+/* =========================================================
+   HERO / STARTSEITE
+   ========================================================= */
 
 .hero {
   min-height: 100vh;
   max-width: 850px;
   margin: 0 auto;
   padding: 40px 30px;
-  text-align: center;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  text-align: center;
 }
 
 .scribble {
@@ -60,15 +68,18 @@ main {
 }
 
 .journal-title {
-  border: 3px solid #111;
-  padding: 10px 30px 14px;
   margin-bottom: 25px;
-  line-height: 0.85;
+  padding: 10px 30px 14px;
+
+  border: 3px solid #111;
+
   font-family: "MuseoModerno", Arial, sans-serif;
+  line-height: 0.85;
 }
 
 .bfrb {
   display: block;
+
   font-size: clamp(65px, 11vw, 115px);
   font-weight: 500;
   letter-spacing: -5px;
@@ -76,27 +87,39 @@ main {
 
 .journal {
   display: block;
+
   font-size: clamp(30px, 5vw, 52px);
   font-weight: 400;
 }
 
 .hero h1 {
+  max-width: 700px;
+  margin: 0 0 20px;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: clamp(26px, 4vw, 34px);
   font-weight: 600;
   line-height: 1.2;
-  max-width: 700px;
-  margin: 0 0 20px;
 }
 
 .intro {
   max-width: 610px;
-  font-size: 18px;
   margin: 0 0 25px;
+
+  font-size: 18px;
+}
+
+.small {
+  margin-top: 14px;
+  margin-bottom: 0;
+
+  font-size: 14px;
 }
 
 
-/* PRIMÄRE BUTTONS */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 .button,
 .button:link,
@@ -105,15 +128,21 @@ main {
 .download-button:link,
 .download-button:visited {
   display: inline-block;
-  background: #8c52ff;
-  color: #ffffff;
-  text-decoration: none;
+
   padding: 15px 27px;
+
+  background: #8c52ff;
   border: 2px solid #8c52ff;
+  color: #ffffff;
+
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
   font-size: 17px;
-  transition: background 0.15s ease, color 0.15s ease;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .button:hover,
@@ -130,21 +159,19 @@ main {
   opacity: 0.45;
 }
 
-.small {
-  font-size: 14px;
-  margin-top: 14px;
-  margin-bottom: 0;
-}
 
-
-/* BFRB INFO */
+/* =========================================================
+   BFRB-ERKLÄRUNG
+   ========================================================= */
 
 .bfrb-info {
   max-width: 700px;
   margin: 0 auto 120px;
   padding: 30px;
+
   border-top: 2px solid #111;
   border-bottom: 2px solid #111;
+
   text-align: center;
 }
 
@@ -155,6 +182,7 @@ main {
 
 .bfrb-details summary {
   cursor: pointer;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 21px;
   font-weight: 600;
@@ -164,47 +192,69 @@ main {
 .bfrb-details-content {
   max-width: 600px;
   margin: 20px auto 0;
+
   text-align: center;
 }
 
 .bfrb-details-content p {
   margin: 0;
+
   font-size: 17px;
   text-align: center;
 }
 
 .bfrb-more {
   display: block;
+
   margin-top: 8px;
+
   color: #8c52ff;
+
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 
-/* ABSCHNITTSÜBERSCHRIFTEN */
+/* =========================================================
+   GEMEINSAMES SEITENRASTER
 
-/*
-  Wichtig:
-  Der Wrapper selbst ist 1050 px breit.
-  Anders als vorher bekommt er KEIN inneres Desktop-Padding.
-  Dadurch läuft der schwarze Balken über die volle Contentbreite.
-*/
+   Desktop:
+   Alles Große ist maximal 1050px breit und hat 30px
+   Sicherheitsabstand zum Browserrand.
 
-.section-heading {
+   Dadurch haben Überschriften/Balken, Galerie,
+   Downloads usw. exakt dieselben Außenkanten.
+   ========================================================= */
+
+.section-heading,
+.why-journal,
+.journal-preview,
+.downloads,
+.community {
   width: calc(100% - 60px);
   max-width: 1050px;
-  margin: 0 auto 45px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   ABSCHNITTSÜBERSCHRIFTEN
+   ========================================================= */
+
+.section-heading {
+  margin-bottom: 45px;
 }
 
 .section-title {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: transparent;
+
   color: #111111;
-  border: none;
+  background: transparent;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 24px;
   font-weight: 650;
@@ -214,24 +264,28 @@ main {
 
 .section-title::after {
   content: "";
+
   display: block;
   width: 100%;
   height: 14px;
+
   margin-top: 12px;
+
   background: #111111;
 }
 
 
-/* WARUM DIESES JOURNAL */
+/* =========================================================
+   WARUM DIESES JOURNAL
+   ========================================================= */
 
 .why-journal {
-  width: calc(100% - 60px);
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 0 0 120px;
+  padding-bottom: 120px;
 }
 
 .why-layout {
+  width: 100%;
+
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
   gap: 55px;
@@ -240,25 +294,31 @@ main {
 
 .why-photo {
   width: 230px;
-  aspect-ratio: 1 / 1;
+  height: 230px;
+
   border: 2px solid #111;
   border-radius: 50%;
+
   overflow: hidden;
 }
 
 .why-photo img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
 .why-content {
+  width: 100%;
   max-width: 700px;
 }
 
 .why-content p {
   margin: 0 0 24px;
+
   font-size: 17px;
   line-height: 1.65;
 }
@@ -270,28 +330,32 @@ main {
 .maybe-thoughts {
   margin-top: 4px !important;
   margin-bottom: 28px !important;
+
   line-height: 1.75 !important;
 }
 
 
-/* JOURNAL-GALERIE */
+/* =========================================================
+   JOURNAL-VORSCHAU
+   ========================================================= */
 
 .journal-preview {
-  width: calc(100% - 60px);
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 0 0 120px;
+  padding-bottom: 120px;
 }
 
 .preview-intro {
-  text-align: center;
-  font-size: 17px;
+  max-width: 700px;
   margin: -20px auto 35px;
+
+  font-size: 17px;
+  text-align: center;
 }
 
 .preview-layout {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: 1.35fr 0.85fr;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
   gap: 45px;
   align-items: center;
 }
@@ -301,12 +365,17 @@ main {
 }
 
 
-/* SLIDER */
+/* =========================================================
+   SLIDER
+   ========================================================= */
 
 .slider {
   position: relative;
+
   width: 100%;
+
   overflow: hidden;
+
   border: 2px solid #111;
   background: #f5f5f5;
 }
@@ -321,26 +390,33 @@ main {
 
 .slide img {
   display: block;
+
   width: 100%;
   height: auto;
+
   cursor: zoom-in;
 }
 
 
-/* SLIDER-PFEILE */
+/* Slider-Pfeile */
 
 .slider-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+
   width: 46px;
   height: 46px;
+
+  transform: translateY(-50%);
+
   border: 2px solid #8c52ff;
   background: #8c52ff;
   color: #ffffff !important;
+
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   line-height: 1;
+
   cursor: pointer;
 }
 
@@ -358,22 +434,27 @@ main {
 }
 
 
-/* SLIDER-PUNKTE */
+/* Slider-Punkte */
 
 .slider-dots {
   display: flex;
   justify-content: center;
   gap: 10px;
+
   margin-top: 18px;
 }
 
 .slider-dot {
   width: 11px;
   height: 11px;
+
   padding: 0;
+
   border: 1.5px solid #8c52ff;
   border-radius: 50%;
+
   background: #ffffff;
+
   cursor: pointer;
 }
 
@@ -382,21 +463,31 @@ main {
 }
 
 
-/* FRAGEN */
+/* =========================================================
+   FRAGEN NEBEN DER GALERIE
+   ========================================================= */
 
 .journal-questions {
-  border-left: 2px solid #111;
+  min-width: 0;
+
   padding-left: 32px;
+
+  border-left: 2px solid #111;
 }
 
 .question-list p {
-  margin: 0;
-  padding: 14px 0;
-  border-bottom: 1px solid #cccccc;
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 20px minmax(0, 1fr);
   column-gap: 8px;
   align-items: start;
+
+  margin: 0;
+  padding: 14px 0;
+
+  border-bottom: 1px solid #cccccc;
+
+  color: #111111;
+
   font-size: 17px;
   font-weight: 400;
   line-height: 1.45;
@@ -408,20 +499,28 @@ main {
 
 .question-list span {
   color: #111111;
+
+  font-size: 17px;
+  font-weight: 400;
   line-height: 1.45;
 }
 
 
-/* BILD-GROSSANSICHT */
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
 
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 1000;
+
   display: none;
   align-items: center;
   justify-content: center;
+
   padding: 30px;
+
   background: rgba(0, 0, 0, 0.88);
 }
 
@@ -431,10 +530,13 @@ main {
 
 .lightbox img {
   display: block;
+
   max-width: 95vw;
   max-height: 92vh;
+
   width: auto;
   height: auto;
+
   object-fit: contain;
 }
 
@@ -442,13 +544,18 @@ main {
   position: fixed;
   top: 20px;
   right: 25px;
+
   width: 48px;
   height: 48px;
+
   border: 2px solid #8c52ff;
+
   background: #8c52ff;
   color: #ffffff;
+
   font-size: 32px;
   line-height: 1;
+
   cursor: pointer;
 }
 
@@ -462,42 +569,49 @@ body.lightbox-open {
 }
 
 
-/* DOWNLOAD */
+/* =========================================================
+   DOWNLOAD
+   ========================================================= */
 
 #download {
   scroll-margin-top: 35px;
 }
 
 .downloads {
-  width: calc(100% - 60px);
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 0 0 80px;
+  padding-bottom: 80px;
 }
 
 .download-intro {
   max-width: 680px;
   margin: 0 auto 30px;
-  text-align: center;
+
   font-size: 17px;
+  text-align: center;
 }
 
 .download-grid {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
   align-items: stretch;
 }
 
 .download-card {
-  border: 2px solid #111;
-  padding: 25px 32px;
   display: flex;
   flex-direction: column;
+
+  min-width: 0;
+
+  padding: 25px 32px;
+
+  border: 2px solid #111;
 }
 
 .download-card > h2 {
   margin: 0 0 12px;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 21px;
   font-weight: 600;
@@ -505,23 +619,27 @@ body.lightbox-open {
 }
 
 .download-card > p {
-  margin: 0 0 20px;
   min-height: 78px;
+
+  margin: 0 0 20px;
+
   font-size: 17px;
+}
+
+.download-option {
+  margin-top: 18px;
+  padding-top: 18px;
+
+  border-top: 1px solid #111;
 }
 
 .download-option:first-of-type {
   min-height: 162px;
 }
 
-.download-option {
-  border-top: 1px solid #111;
-  padding-top: 18px;
-  margin-top: 18px;
-}
-
 .download-option h3 {
   margin: 0 0 5px;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 18px;
   font-weight: 600;
@@ -529,25 +647,33 @@ body.lightbox-open {
 }
 
 .download-option p {
-  font-size: 15px;
   margin: 0 0 10px;
+
+  font-size: 15px;
 }
 
 
-/* DRUCKANLEITUNG-LINK */
+/* =========================================================
+   DRUCKANLEITUNG-LINK
+   ========================================================= */
 
 .print-link {
   display: inline-block;
+
   margin-top: 12px !important;
   margin-left: 2px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px !important;
-  color: #8c52ff;
-  text-decoration: none;
+  padding: 0;
+
   border: none;
   border-bottom: 1px solid #8c52ff;
+
   background: transparent;
-  padding: 0;
+  color: #8c52ff;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px !important;
+  text-decoration: none;
+
   cursor: pointer;
 }
 
@@ -556,17 +682,22 @@ body.lightbox-open {
 }
 
 
-/* DRUCKANLEITUNG */
+/* =========================================================
+   DRUCKANLEITUNG
+   ========================================================= */
 
 .print-guide {
   margin-top: 55px;
   padding-top: 35px;
+
   border-top: 2px solid #111;
+
   scroll-margin-top: 35px;
 }
 
 .print-guide summary {
   cursor: pointer;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 21px;
   font-weight: 600;
@@ -574,6 +705,7 @@ body.lightbox-open {
 
 .print-guide-content {
   margin-top: 25px;
+
   font-size: 16px;
 }
 
@@ -591,32 +723,42 @@ body.lightbox-open {
 }
 
 
-/* COMMUNITY & PROJEKT */
+/* =========================================================
+   COMMUNITY & PROJEKT
+   ========================================================= */
 
 .community {
-  width: calc(100% - 60px);
-  max-width: 1050px;
-  margin: 0 auto;
-  padding: 0 0 100px;
+  padding-bottom: 100px;
 }
 
+/*
+  Der Abschnitt selbst bleibt 1050px breit, damit er exakt
+  unter dem schwarzen Balken sitzt.
+
+  Der eigentliche Text ist bewusst schmaler und mittig,
+  damit keine riesigen Textzeilen entstehen.
+*/
+
 .community-layout {
+  width: 100%;
+}
+
+.community-content {
+  width: 100%;
   max-width: 760px;
   margin: 0 auto;
 }
 
-.community-content {
-  min-width: 0;
-}
-
 .community-content > p {
   margin: 0 0 24px;
+
   font-size: 17px;
   line-height: 1.65;
 }
 
 .community-content a {
   color: #8c52ff;
+
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -626,14 +768,19 @@ body.lightbox-open {
   text-decoration-thickness: 2px;
 }
 
+
+/* Feedback */
+
 .community-feedback {
   margin-top: 40px;
   padding-top: 28px;
+
   border-top: 1px solid #111;
 }
 
 .community-feedback h2 {
   margin: 0 0 15px;
+
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -642,21 +789,28 @@ body.lightbox-open {
 
 .community-feedback p {
   margin: 0 0 20px;
+
   line-height: 1.65;
 }
 
 .feedback-placeholder {
   display: inline-block;
+
   margin-top: 4px;
   padding: 13px 20px;
-  background: #8c52ff;
+
   border: 2px solid #8c52ff;
+
+  background: #8c52ff;
   color: #ffffff;
+
   font-weight: 700;
 }
 
 
-/* DROPDOWN-DREIECKE */
+/* =========================================================
+   DROPDOWN-DREIECKE
+   ========================================================= */
 
 .bfrb-details > summary,
 .print-guide > summary {
@@ -676,15 +830,21 @@ body.lightbox-open {
 .bfrb-details > summary::before,
 .print-guide > summary::before {
   content: "▶" !important;
+
   display: inline-block !important;
+
   margin-right: 9px;
+
   color: #8c52ff !important;
+
   font-family: Arial, Helvetica, sans-serif !important;
   font-size: 14px !important;
   font-weight: normal !important;
   line-height: 1;
+
   transform: rotate(0deg);
   transform-origin: center;
+
   transition: transform 0.15s ease;
 }
 
@@ -694,9 +854,57 @@ body.lightbox-open {
 }
 
 
-/* HANDY */
+/* =========================================================
+   TABLET / KLEINERE DESKTOPBREITEN
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .why-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .why-photo {
+    width: 190px;
+    height: 190px;
+  }
+
+  .preview-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .journal-questions {
+    padding-left: 0;
+
+    border-left: none;
+  }
+
+}
+
+
+/* =========================================================
+   HANDY
+   ========================================================= */
 
 @media (max-width: 600px) {
+
+  /*
+    Auf dem Handy bekommen alle großen Bereiche
+    exakt 20px Abstand links und rechts.
+  */
+
+  .section-heading,
+  .why-journal,
+  .journal-preview,
+  .downloads,
+  .community {
+    width: calc(100% - 40px);
+  }
+
+
+  /* HERO */
 
   .hero {
     min-height: 90vh;
@@ -708,8 +916,8 @@ body.lightbox-open {
   }
 
   .journal-title {
-    padding: 10px 20px 13px;
     margin-bottom: 35px;
+    padding: 10px 20px 13px;
   }
 
   .bfrb {
@@ -717,13 +925,15 @@ body.lightbox-open {
   }
 
   .hero h1 {
-    font-size: 26px;
     margin-bottom: 25px;
+
+    font-size: 26px;
   }
 
   .intro {
-    font-size: 17px;
     margin-bottom: 35px;
+
+    font-size: 17px;
   }
 
   .small {
@@ -731,10 +941,17 @@ body.lightbox-open {
   }
 
 
-  /* ABSCHNITTSÜBERSCHRIFTEN */
+  /* BFRB INFO */
+
+  .bfrb-info {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+
+  /* ÜBERSCHRIFTEN */
 
   .section-heading {
-    width: calc(100% - 40px);
     margin-bottom: 40px;
   }
 
@@ -748,21 +965,25 @@ body.lightbox-open {
   }
 
 
-  /* WARUM DIESES JOURNAL */
+  /* WARUM */
 
   .why-journal {
-    width: calc(100% - 40px);
     padding-bottom: 100px;
   }
 
   .why-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    display: block;
   }
 
   .why-photo {
     width: 220px;
-    margin: 0 auto;
+    height: 220px;
+
+    margin: 0 auto 30px;
+  }
+
+  .why-content {
+    max-width: none;
   }
 
   .maybe-thoughts {
@@ -770,18 +991,10 @@ body.lightbox-open {
   }
 
 
-  /* BFRB INFO */
-
-  .bfrb-info {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-
   /* GALERIE */
 
   .journal-preview {
-    width: calc(100% - 40px);
+    padding-bottom: 100px;
   }
 
   .preview-layout {
@@ -797,18 +1010,20 @@ body.lightbox-open {
   }
 
   .journal-questions {
-    border-left: none;
-    padding-left: 0;
     margin-top: 35px;
+    padding-left: 0;
+
+    border-left: none;
   }
 
   .question-list p {
-    font-size: 17px;
     padding: 11px 0;
+
+    font-size: 17px;
   }
 
 
-  /* GROSSANSICHT */
+  /* LIGHTBOX */
 
   .lightbox {
     padding: 15px;
@@ -826,10 +1041,6 @@ body.lightbox-open {
 
 
   /* DOWNLOAD */
-
-  .downloads {
-    width: calc(100% - 40px);
-  }
 
   .download-grid {
     grid-template-columns: 1fr;
@@ -855,11 +1066,10 @@ body.lightbox-open {
   /* COMMUNITY */
 
   .community {
-    width: calc(100% - 40px);
     padding-bottom: 70px;
   }
 
-  .community-layout {
+  .community-content {
     max-width: none;
   }
 
@@ -871,15 +1081,21 @@ body.lightbox-open {
     font-size: 22px;
   }
 
+  .feedback-placeholder {
+    max-width: 100%;
+  }
+
 }
 
 
-/* INTERAKTIVE ELEMENTE */
+/* =========================================================
+   INTERAKTIVE ELEMENTE – SICHERHEITSREGELN
+   ========================================================= */
 
 .question-list span,
 .question-list p,
 .question-list p::before {
-  color: #111 !important;
+  color: #111111 !important;
 }
 
 .slider .slider-arrow,

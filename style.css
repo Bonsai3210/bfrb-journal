@@ -185,22 +185,26 @@ main {
 
 /* ABSCHNITTSÜBERSCHRIFTEN */
 
+/*
+  Wichtig:
+  Der Wrapper selbst ist 1050 px breit.
+  Anders als vorher bekommt er KEIN inneres Desktop-Padding.
+  Dadurch läuft der schwarze Balken über die volle Contentbreite.
+*/
+
 .section-heading {
-  width: 100%;
+  width: calc(100% - 60px);
   max-width: 1050px;
   margin: 0 auto 45px;
-  padding: 0 30px;
 }
 
 .section-title {
   width: 100%;
   margin: 0;
   padding: 0;
-
   background: transparent;
   color: #111111;
   border: none;
-
   font-family: "MuseoModerno", Arial, sans-serif;
   font-size: 24px;
   font-weight: 650;
@@ -218,40 +222,65 @@ main {
 }
 
 
-/* INHALT */
-
-.content {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 30px 120px;
-}
-
-.content p {
-  font-size: 17px;
-  margin-top: 0;
-  margin-bottom: 24px;
-}
-
-
 /* WARUM DIESES JOURNAL */
 
-.why-journal p:first-child {
+.why-journal {
+  width: calc(100% - 60px);
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 0 120px;
+}
+
+.why-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 55px;
+  align-items: start;
+}
+
+.why-photo {
+  width: 230px;
+  aspect-ratio: 1 / 1;
+  border: 2px solid #111;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.why-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.why-content {
+  max-width: 700px;
+}
+
+.why-content p {
+  margin: 0 0 24px;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.why-content p:first-child {
   font-weight: 700;
 }
 
 .maybe-thoughts {
-  margin-top: 4px;
+  margin-top: 4px !important;
   margin-bottom: 28px !important;
-  line-height: 1.75;
+  line-height: 1.75 !important;
 }
 
 
 /* JOURNAL-GALERIE */
 
 .journal-preview {
+  width: calc(100% - 60px);
   max-width: 1050px;
   margin: 0 auto;
-  padding: 0 30px 120px;
+  padding: 0 0 120px;
 }
 
 .preview-intro {
@@ -364,12 +393,10 @@ main {
   margin: 0;
   padding: 14px 0;
   border-bottom: 1px solid #cccccc;
-
   display: grid;
   grid-template-columns: 20px 1fr;
   column-gap: 8px;
   align-items: start;
-
   font-size: 17px;
   font-weight: 400;
   line-height: 1.45;
@@ -442,9 +469,10 @@ body.lightbox-open {
 }
 
 .downloads {
+  width: calc(100% - 60px);
   max-width: 1050px;
   margin: 0 auto;
-  padding: 0 30px 80px;
+  padding: 0 0 80px;
 }
 
 .download-intro {
@@ -566,40 +594,15 @@ body.lightbox-open {
 /* COMMUNITY & PROJEKT */
 
 .community {
+  width: calc(100% - 60px);
   max-width: 1050px;
   margin: 0 auto;
-  padding: 0 30px 100px;
+  padding: 0 0 100px;
 }
 
 .community-layout {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 55px;
-  align-items: start;
-}
-
-.community-photo {
-  width: 300px;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
-  border: 2px solid #111;
-  border-radius: 50%;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 35px;
-  font-family: "MuseoModerno", Arial, sans-serif;
-  font-size: 17px;
-  color: #777777;
-  overflow: hidden;
-}
-
-.community-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .community-content {
@@ -731,8 +734,7 @@ body.lightbox-open {
   /* ABSCHNITTSÜBERSCHRIFTEN */
 
   .section-heading {
-    padding-left: 20px;
-    padding-right: 20px;
+    width: calc(100% - 40px);
     margin-bottom: 40px;
   }
 
@@ -746,12 +748,29 @@ body.lightbox-open {
   }
 
 
-  /* INHALT */
+  /* WARUM DIESES JOURNAL */
 
-  .content {
-    padding-left: 20px;
-    padding-right: 20px;
+  .why-journal {
+    width: calc(100% - 40px);
+    padding-bottom: 100px;
   }
+
+  .why-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .why-photo {
+    width: 220px;
+    margin: 0 auto;
+  }
+
+  .maybe-thoughts {
+    line-height: 1.65 !important;
+  }
+
+
+  /* BFRB INFO */
 
   .bfrb-info {
     margin-left: 20px;
@@ -759,18 +778,10 @@ body.lightbox-open {
   }
 
 
-  /* WARUM DIESES JOURNAL */
-
-  .maybe-thoughts {
-    line-height: 1.65;
-  }
-
-
   /* GALERIE */
 
   .journal-preview {
-    padding-left: 20px;
-    padding-right: 20px;
+    width: calc(100% - 40px);
   }
 
   .preview-layout {
@@ -817,8 +828,7 @@ body.lightbox-open {
   /* DOWNLOAD */
 
   .downloads {
-    padding-left: 20px;
-    padding-right: 20px;
+    width: calc(100% - 40px);
   }
 
   .download-grid {
@@ -845,19 +855,12 @@ body.lightbox-open {
   /* COMMUNITY */
 
   .community {
-    padding-left: 20px;
-    padding-right: 20px;
+    width: calc(100% - 40px);
     padding-bottom: 70px;
   }
 
   .community-layout {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .community-photo {
-    width: 260px;
-    margin-bottom: 10px;
+    max-width: none;
   }
 
   .community-feedback {

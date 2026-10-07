@@ -476,8 +476,12 @@ body.lightbox-open {
 
 .download-card > p {
   margin: 0 0 20px;
-  min-height: 52px;
+  min-height: 78px;
   font-size: 17px;
+}
+
+.download-option:first-of-type {
+  min-height: 162px;
 }
 
 .download-option {

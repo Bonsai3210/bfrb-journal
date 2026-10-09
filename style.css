@@ -245,10 +245,6 @@ main {
 
 /* =========================================================
    WARUM DIESES JOURNAL
-
-   Das Foto sitzt rechts im Fließtext.
-   Der Text nutzt unterhalb des Fotos wieder
-   automatisch die gesamte Breite.
    ========================================================= */
 
 .why-journal {
@@ -291,6 +287,23 @@ main {
   margin-top: 4px !important;
   margin-bottom: 28px !important;
   line-height: 1.75 !important;
+}
+
+/* LINKEDIN */
+
+.why-content p.why-linkedin {
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.why-linkedin a {
+  color: #8c52ff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.why-linkedin a:hover {
+  text-decoration-thickness: 2px;
 }
 
 
@@ -623,8 +636,6 @@ body.lightbox-open {
 
 /* =========================================================
    COMMUNITY & PROJEKT
-
-   Zwei Spalten oben, Feedback über volle Breite.
    ========================================================= */
 
 .community {
@@ -701,6 +712,43 @@ body.lightbox-open {
   color: #ffffff;
   font-weight: 700;
   overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FOOTER – LILA MIT WEISSER SCHRIFT
+   ========================================================= */
+
+.site-footer {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 30px 20px;
+  background: #8c52ff;
+  border: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.site-footer a,
+.site-footer a:link,
+.site-footer a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 
@@ -962,6 +1010,14 @@ body.lightbox-open {
 
   .feedback-placeholder {
     max-width: 100%;
+  }
+
+
+  /* FOOTER */
+
+  .site-footer {
+    padding: 25px 20px;
+    gap: 25px;
   }
 
 }
